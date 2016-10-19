@@ -1,0 +1,34 @@
+float taylor(float x)
+{
+	int i;
+	unsigned int d;
+	float temp,term,sin=0;
+	temp=x;
+	x=x*(3.1415/180);
+	term=x;
+	sin=term;
+	i=3;
+	do
+	{
+		d=i*(2*i+1);
+		term=-term*x*x/d;
+		sin+=term;
+		i+=2;
+	}while(term>0.00001);
+	return sin;
+}
+#include<stdio.h>
+#include<math.h>
+float taylor(float x);
+int main()
+{
+	float x,a;
+	printf("Enter the value of x ");
+	scanf("%f",&x);
+	a=taylor(x);
+	x=x*(3.1415/180);
+	printf("\nThe value calculated is %f",a);
+	printf("\nThe sine function is %f",sin(x));
+	return 0;
+}
+
