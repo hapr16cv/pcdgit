@@ -1,0 +1,26 @@
+float mysqrt(float n)
+{
+	float r1,r2,error;
+	error=0.00001;
+	r1=n/2;
+	r2=n/r1;
+	while(fabs(r1-r2)>error)
+	{
+		r1=(r1+r2)/2;
+		r2=n/r1;
+	}
+	return r1;
+}
+#include<stdio.h>
+#include<math.h>
+int main()
+{
+	float x,y;
+	printf("Enter the number ");
+	scanf("%f",&x);
+	y=mysqrt(x);
+	printf("\nThe calculated square root is  %.3f",y);
+	printf("\nthe actual square root is  %.3f",sqrt(x));
+	return 0;
+}
+
