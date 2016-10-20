@@ -1,0 +1,43 @@
+void binary_search(int a[], int n)
+{
+	int i,j,temp,flag = 1;
+	for ( i=0;i<n-1;i++)
+	{
+		for (j=0;j<n-1;j++)
+		{
+			if(a[j] > a[j+1])
+			{
+				temp = a[j];
+				a[j] = a[j+1];
+				a[j+1] = temp;
+				flag = 0;
+			}
+	}
+	if (flag)
+	{
+		break;
+	}
+}
+return ;
+}
+#include<stdio.h>
+int main()
+{
+	int i,n,a[10];
+	printf("Enter how many numbers ");
+	scanf("%d",&n);
+	for(i=0;i<n;i++)
+	{
+		printf("\nEnter the %d number ",i+1);
+		scanf("%d",&a[i]);
+	}
+	printf("\nArray without Sorting\n");
+	for(i=0;i<n;i++)                    
+		printf("%d\t",a[i]);
+	binary_search(a,n);
+	printf("\n\nArray in Sorted order\n");
+	for(i=0;i<n;i++)
+		printf("%d\t",a[i]);
+	return 0;
+}
+
