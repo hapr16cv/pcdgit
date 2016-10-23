@@ -1,0 +1,69 @@
+#include<stdio.h>
+
+void read_array(int m , int n , int a[m][n] )
+{
+    int i,j;
+    for(i=1;i<=m;i++)
+    {
+    	for(j=1;j<=n;j++)
+    	{
+        	printf("Enter Element %d %d ",i,j);
+        	scanf("%d",&a[i][j]);
+    	}
+    }
+    return;
+}
+
+void multiply_array(int m,int n,int p,int q, int a[m][n],int b[p][q],int c[m][q])
+{
+    int i,j,k;
+
+    for(i=1;i<=m;i++)
+    {
+    	for(j=1;j<=q;j++)
+    	{	c[i][j]=0;
+    		for (k=1;k<=n;k++)
+    		{
+    			c[i][j] =c[i][j]+(a[i][k] * b[k][j]);
+    		}
+    	}
+    }
+    return;
+}
+
+void print_array(int m,int n,int a[m][n])
+{
+    int i,j;
+    for(i=1;i<=m;i++)
+        {
+        for(j=1;j<=n;j++)
+        {
+            printf("%d\t ",a[i][j]);
+         }
+        printf("\n");
+        }
+        return;
+}
+
+int main()
+{
+    int m,n,p,q,a[m][n],b[p][q],c[m][q];
+    printf("Enter number of rows  of 1st matrix ");
+    scanf("%d",&m);
+    printf("Enter number of colomns of 1st matrix ");
+    scanf("%d",&n);
+    read_array(m,n,a);
+	  printf("Enter number of rows  of 2nd matrix ");
+	  scanf("%d",&p);
+	  printf("Enter number of colomns of 2nd matrix ");
+	  scanf("%d",&q);
+    read_array(p,q,b);
+    printf("\n\n1st array is  \n\n");
+    print_array(m,n,a);
+    printf("\n\n2nd array is  \n\n");
+    print_array(p,q,b);
+    printf("\n\nmultiplied array is   \n\n");
+    multiply_array(m,n,p,q,a,b,c);
+    print_array(m,q,c);
+    return 0;
+ }
