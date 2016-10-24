@@ -1,0 +1,32 @@
+#include<stdio.h>
+#include<string.h>
+void calc_vowels(char a[100])
+ {
+	int c,v,b;
+	c=0;
+	v=0;
+	b=0;
+	for(int i=0; i<strlen(a); i++)
+    {
+		if(a[i]=='a'||a[i]=='A'||a[i]=='e'||a[i]=='E'||a[i]=='i'||a[i]=='I'||a[i]=='o'||a[i]=='O'||a[i]=='u'||a[i]=='U')
+           {
+              v++;
+           }
+        else if(a[i]==' ')
+		   {
+              b++;
+		   }
+
+	}
+	c=strlen(a)-(b+v);
+	printf("\nThe number of vowels is %d\n\nThe number of consonants are %d ",v,c);
+	return;
+}
+
+int main() {
+	char a[100];
+	printf("Enter the string ");
+	scanf("%s",&a);
+	calc_vowels(a);
+	return 0;
+}
