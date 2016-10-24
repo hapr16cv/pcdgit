@@ -1,0 +1,28 @@
+#include<stdio.h>
+#include<math.h>
+int main()
+{
+	int *ptr,n,a[10],i;
+	float sum=0,mean=0,var=0,std=0;
+	printf("How many numbers\n");
+	scanf("%d",&n);
+	printf("Enter the numbers\n");
+	for(i=0;i<n;i++)
+		 scanf("%d",&a[i]);
+	ptr=a;
+	for(i=0;i<n;i++)
+	{
+		 sum=sum+(*ptr);
+		 ptr++;
+	}
+	mean=sum/n;
+	ptr=a;
+	for(i=0;i<n;i++)
+	{
+		 var=var+pow((*ptr-mean),2);
+		 ptr++;
+	}
+	std=sqrt(var/n);
+	printf("Sum=%f\tMean=%f\tStd Deviation=%f\n",sum,mean,std);
+	return 0;
+}
