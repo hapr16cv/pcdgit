@@ -1,0 +1,17 @@
+#include <iostream>
+int r_shift(int a, int b)
+{
+	int c = a>>b;
+	return c;
+}
+int main()
+{
+	int x,n,i,temp;
+	printf("Enter the number\n");
+	scanf("%d",&x);
+	printf("Enter the bits you want to Right Shift the number\n");
+	scanf("%d",&n);
+	temp = r_shift(x,n);
+	printf("Number After Right Shift is %d\n",temp);
+	return 0;
+}
