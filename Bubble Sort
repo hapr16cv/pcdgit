@@ -1,4 +1,4 @@
-void binary_search(int a[], int n)
+void bubble_sort(int a[], int n)
 {
 	int i,j,temp,flag = 1;
 	for ( i=0;i<n-1;i++)
@@ -34,7 +34,7 @@ int main()
 	printf("\nArray without Sorting\n");
 	for(i=0;i<n;i++)                    
 		printf("%d\t",a[i]);
-	binary_search(a,n);
+	bubble_sort(a,n);
 	printf("\n\nArray in Sorted order\n");
 	for(i=0;i<n;i++)
 		printf("%d\t",a[i]);
