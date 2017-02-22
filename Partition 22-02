@@ -1,0 +1,63 @@
+#include <stdio.h>
+void get_array(int a[],int x)
+	{   int i;
+		for( i=0;i<x;i++)
+		{
+			printf("\nEnter the %d Number : ", i+1);
+			scanf("%d",&a[i]);
+		}
+		return;
+	}
+void print_array(int a[], int x)
+	{   int i;
+		printf("\nThe array is : ");
+	    for( i=0;i<x;i++)
+		    {
+		    	printf("%d\t\t", a[i]);
+	     	}
+	    return ;
+	}
+void partition(int a[], int x)
+	{		int  i;
+			int j=0;
+	        for( i=0;i<x-1;i++)
+		       {
+		        	if(a[j]>a[i+1])
+			     	{
+			     		int temp = a[i];
+			    		a[i] = a[i+1];
+			    		a[i+1] = temp;
+			    		temp = a[j];
+			     		a[j] = a[i];
+			    		a[i] = temp;
+		    			j++;
+		    		}
+	       	}
+	       	while(i<x)
+		{
+			if(a[j]>a[i])
+				{
+				   int temp = a[i];
+					a[i] = a[i-1];
+					a[i-1] = temp;
+					temp = a[j];
+					a[j] = a[i];
+					a[i] = temp;
+					j++;
+				}
+			i++;
+		}
+      return ;
+	}
+	int main()
+		{
+			int x;
+			printf("Enter the number of elements : ");
+	        scanf("%d",&x);
+        	int a[x];
+        	get_array(a,x);
+        	print_array(a,x);
+        	partition(a,x);
+        	print_array(a,x);
+        	return 0;
+		}
